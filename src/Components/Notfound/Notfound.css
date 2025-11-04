@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@700&display=swap');
+
+.notfound-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background: radial-gradient(circle at 20% top, #0d0d0d 0%, #000 100%);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.notfound-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: transparent;
+  box-shadow:
+    10vw 20vh #fff,
+    20vw 50vh #fff,
+    50vw 10vh #fff,
+    70vw 80vh #fff,
+    90vw 30vh #fff,
+    30vw 70vh #fff;
+  animation: particlesMove 20s linear infinite;
+}
+
+.notfound-section:hover::before {
+  box-shadow:
+    10vw 20vh #e50914,
+    20vw 50vh #e50914,
+    50vw 10vh #e50914,
+    70vw 80vh #e50914,
+    90vw 30vh #e50914,
+    30vw 70vh #e50914;
+  filter: blur(3px);
+}
+
+@keyframes particlesMove {
+  0% { transform: translateY(0) translateX(0); }
+  100% { transform: translateY(-200vh) translateX(100vw); }
+}
+
+.notfound-content {
+  position: relative;
+  z-index: 1;
+}
+
+.notfound-content h1 {
+  font-size: 6rem;
+  color: #e50914;
+  margin-bottom: 20px;
+  animation: bounce 1.5s infinite;
+}
+
+.notfound-content h2,
+.notfound-content p {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.notfound-content h2 {
+  animation-delay: 0.5s;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.notfound-content p {
+  animation-delay: 1s;
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.home-link {
+  text-decoration: none;
+  color: #fff;
+  background: #e50914;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 1.5s;
+}
+
+.home-link:hover {
+  background: #ff4c4c;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+@media (max-width: 768px) {     
+  .notfound-content h1 {
+    font-size: 4rem;
+  }
+  
+  .notfound-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .notfound-content p {
+    font-size: 1rem;
+  }
+}
